@@ -108,3 +108,14 @@ a{color:inherit}
 .site-footer .copy{grid-column:1/-1;border-top:1px solid #3a322b;padding-top:18px}
 .dark>.section-head,.cream>.section-head{max-width:1200px;padding-right:40%}
 @media(max-width:860px){.dark>.section-head,.cream>.section-head{padding-right:0}}
+.answer{background:var(--cream);border-left:4px solid var(--orange);border-radius:0 var(--r) var(--r) 0;padding:18px 22px;margin:0 0 2em;max-width:860px}
+.answer p{margin:0}.answer .eyebrow{margin-bottom:.4em}
+.prose{max-width:760px}.prose h2{font-size:clamp(1.4rem,3vw,1.9rem);margin-top:1.6em}
+.prose ul{padding-left:1.2em}.prose li{margin:.4em 0}
+.post-card img{border-radius:10px;margin-bottom:1em;aspect-ratio:4/3;object-fit:cover;width:100%}
+.post-card h3 a{text-decoration:none}.cards.post-grid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.cards.post-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.cards.post-grid{grid-template-columns:1fr}}
+.site-footer{grid-template-columns:1.4fr 1fr 1fr 1fr}
+@media(max-width:860px){.site-footer{grid-template-columns:1fr}}
+.site-header nav{flex-wrap:wrap}
