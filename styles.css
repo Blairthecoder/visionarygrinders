@@ -119,3 +119,7 @@ a{color:inherit}
 .site-footer{grid-template-columns:1.4fr 1fr 1fr 1fr}
 @media(max-width:860px){.site-footer{grid-template-columns:1fr}}
 .site-header nav{flex-wrap:wrap}
+.wordmark{display:flex;flex-direction:column;gap:3px;font:italic 800 1.5rem/.95 "Barlow Condensed","Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em;color:#fff}
+.wordmark span{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-skip-ink:none}
+.site-footer .wordmark{font-size:1.8rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
