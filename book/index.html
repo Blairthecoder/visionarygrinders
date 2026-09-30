@@ -24,7 +24,8 @@
 <a class="skip" href="#main">Skip to Content</a>
 <header class="site-header">
   <a class="brand" href="/" aria-label="Visionary Grinders Home"><span class="wordmark" aria-hidden="true"><span>Visionary</span><span>Grinders</span></span><span class="sr">Visionary Grinders</span></a>
-  <nav aria-label="Main"><a href="/menu/">Menu</a><a href="/events/">Events</a><a href="/service-areas/">Service Areas</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/merch/">Merch</a><a href="/faq/">FAQ</a><a class="btn btn-sm" href="/book/">Book Us</a></nav>
+  <nav id="site-nav" aria-label="Main"><a href="/menu/">Menu</a><a href="/events/">Events</a><a href="/service-areas/">Service Areas</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/merch/">Merch</a><a href="/faq/">FAQ</a></nav>
+  <div class="hdr-actions"><a class="btn btn-sm" href="/book/">Book Us</a><button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button></div>
 </header>
 <main id="main">
 <section class="page-hero"><div class="page-hero-in"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Book</span></nav><h1>Book a Houston Coffee Pop-Up</h1><p class="lead">Tell us about your event. Share a few details and we'll follow up to talk through your event and what we can serve.</p></div></section>
@@ -71,7 +72,7 @@
   <nav aria-label="Footer Service Areas"><h2>Service Areas</h2><ul><li><a href="/service-areas/downtown-houston/">Downtown Houston</a></li><li><a href="/service-areas/galleria-uptown/">Galleria and Uptown Houston</a></li><li><a href="/service-areas/katy/">Katy, TX</a></li><li><a href="/service-areas/sugar-land/">Sugar Land, TX</a></li><li><a href="/service-areas/the-woodlands/">The Woodlands, TX</a></li><li><a href="/service-areas/pearland/">Pearland, TX</a></li><li><a href="/service-areas/cypress/">Cypress, TX</a></li><li><a href="/service-areas/spring/">Spring, TX</a></li><li><a href="/service-areas/missouri-city/">Missouri City, TX</a></li><li><a href="/service-areas/humble/">Humble, TX</a></li></ul></nav>
   <p class="copy">&copy; <span id="yr">2026</span> Visionary Grinders. All Rights Reserved.</p>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();(function(){var b=document.querySelector('.nav-toggle'),h=document.querySelector('.site-header');if(!b)return;b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o)});})();</script>
 <script>
 (function(){try{var t=new URLSearchParams(location.search).get("type");var s=document.getElementById("event-type");if(t&&s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break;}}}}catch(e){}})();
 </script>
