@@ -36,7 +36,7 @@
       <p class="eyebrow">VG Shirts</p>
       <h2>Merch Coming Soon</h2>
       <p>You've been asking, so we're making room for it. I'm finalizing ordering details now. Join the list and you'll be first to know when the shirts drop.</p>
-      <form name="merch-interest" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="form inline">
+      <form name="merch-interest" method="POST" action="/thanks.html" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" class="form inline">
         <input type="hidden" name="form-name" value="merch-interest">
         <p class="hp"><label>Don't fill this out <input name="bot-field"></label></p>
         <label>Name<input type="text" name="name" required autocomplete="name"></label>
@@ -44,6 +44,7 @@
         <label>Size (Optional)
           <select name="size"><option value="">Select</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select>
         </label>
+        <div class="recaptcha" data-netlify-recaptcha="true"></div>
         <button class="btn" type="submit">Notify Me</button>
       </form>
     </div>
