@@ -1,0 +1,39 @@
+# Visionary Grinders
+
+> Specialty coffee pop-up and mobile coffee bar serving Houston, TX and nearby communities (Katy, Sugar Land, The Woodlands, Pearland, Cypress, Spring, Missouri City, Humble). Founded by Jasmine Rhodes. Serves specialty lattes, espresso drinks and cold brew, hot or iced, at private celebrations, workplace events, community gatherings and brand collaborations.
+
+Book: https://visionary-grinders.netlify.app/book/
+
+## Pages
+- https://visionary-grinders.netlify.app/
+- https://visionary-grinders.netlify.app/menu/
+- https://visionary-grinders.netlify.app/events/
+- https://visionary-grinders.netlify.app/events/private-celebrations/
+- https://visionary-grinders.netlify.app/events/workplace-events/
+- https://visionary-grinders.netlify.app/events/community-gatherings/
+- https://visionary-grinders.netlify.app/events/brand-collaborations/
+- https://visionary-grinders.netlify.app/about/
+- https://visionary-grinders.netlify.app/merch/
+- https://visionary-grinders.netlify.app/faq/
+- https://visionary-grinders.netlify.app/book/
+- https://visionary-grinders.netlify.app/service-areas/
+- https://visionary-grinders.netlify.app/service-areas/downtown-houston/
+- https://visionary-grinders.netlify.app/service-areas/galleria-uptown/
+- https://visionary-grinders.netlify.app/service-areas/katy/
+- https://visionary-grinders.netlify.app/service-areas/sugar-land/
+- https://visionary-grinders.netlify.app/service-areas/the-woodlands/
+- https://visionary-grinders.netlify.app/service-areas/pearland/
+- https://visionary-grinders.netlify.app/service-areas/cypress/
+- https://visionary-grinders.netlify.app/service-areas/spring/
+- https://visionary-grinders.netlify.app/service-areas/missouri-city/
+- https://visionary-grinders.netlify.app/service-areas/humble/
+- https://visionary-grinders.netlify.app/blog/
+- https://visionary-grinders.netlify.app/blog/what-is-a-coffee-pop-up/
+- https://visionary-grinders.netlify.app/blog/how-much-coffee-do-you-need-for-an-event/
+- https://visionary-grinders.netlify.app/blog/coffee-bar-for-bridal-and-baby-showers/
+- https://visionary-grinders.netlify.app/blog/mobile-coffee-bar-vs-coffee-catering/
+- https://visionary-grinders.netlify.app/blog/employee-appreciation-coffee-ideas/
+- https://visionary-grinders.netlify.app/blog/coffee-for-fundraisers-and-church-events/
+- https://visionary-grinders.netlify.app/blog/hot-vs-iced-coffee-for-houston-events/
+- https://visionary-grinders.netlify.app/blog/iced-latte-vs-cold-brew/
+- https://visionary-grinders.netlify.app/blog/coffee-pop-up-booking-checklist/

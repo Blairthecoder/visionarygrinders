@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://visionary-grinders.netlify.app/</loc></url>
+  <url><loc>https://visionary-grinders.netlify.app/</loc><lastmod>2026-09-30</lastmod><priority>1.0</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/menu/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/events/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/events/private-celebrations/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/events/workplace-events/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/events/community-gatherings/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/events/brand-collaborations/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/about/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/merch/</loc><lastmod>2026-09-30</lastmod><priority>0.5</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/faq/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/book/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/downtown-houston/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/galleria-uptown/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/katy/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/sugar-land/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/the-woodlands/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/pearland/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/cypress/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/spring/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/missouri-city/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/service-areas/humble/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/</loc><lastmod>2026-09-30</lastmod><priority>0.7</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/what-is-a-coffee-pop-up/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/how-much-coffee-do-you-need-for-an-event/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/coffee-bar-for-bridal-and-baby-showers/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/mobile-coffee-bar-vs-coffee-catering/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/employee-appreciation-coffee-ideas/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/coffee-for-fundraisers-and-church-events/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/hot-vs-iced-coffee-for-houston-events/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/iced-latte-vs-cold-brew/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
+  <url><loc>https://visionary-grinders.netlify.app/blog/coffee-pop-up-booking-checklist/</loc><lastmod>2026-09-30</lastmod><priority>0.6</priority></url>
 </urlset>
