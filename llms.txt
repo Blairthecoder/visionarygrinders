@@ -4,36 +4,64 @@
 
 Book: https://visionary-grinders.netlify.app/book/
 
+## Facts
+- Business: Visionary Grinders, a specialty coffee pop-up and mobile coffee bar
+- Founder: Jasmine Rhodes
+- Location: Houston, TX
+- Service area: Houston, Katy, Sugar Land, The Woodlands, Pearland, Cypress, Spring, Missouri City, Humble
+- Menu: specialty lattes (including honey vanilla and brown sugar), classic espresso drinks and cold brew, served hot or iced, made to order
+- Event types: private celebrations, workplace events, community gatherings, brand collaborations, weddings, graduation parties
+- Industries: corporate and office, real estate, healthcare, schools and universities, churches, property management, hotels and conferences, retail and grand openings, nonprofits
+- How to book: inquiry form at /book/ (date, guest count, location, event type)
+- Pricing: quoted per event after inquiry; see /blog/coffee-pop-up-cost-houston/ for what affects cost
+
 ## Pages
+- https://visionary-grinders.netlify.app/about//
+- https://visionary-grinders.netlify.app/blog/coffee-at-outdoor-houston-events-in-the-heat//
+- https://visionary-grinders.netlify.app/blog/coffee-bar-for-bridal-and-baby-showers//
+- https://visionary-grinders.netlify.app/blog/coffee-for-fundraisers-and-church-events//
+- https://visionary-grinders.netlify.app/blog/coffee-pop-up-booking-checklist//
+- https://visionary-grinders.netlify.app/blog/coffee-pop-up-cost-houston//
+- https://visionary-grinders.netlify.app/blog/employee-appreciation-coffee-ideas//
+- https://visionary-grinders.netlify.app/blog/hot-vs-iced-coffee-for-houston-events//
+- https://visionary-grinders.netlify.app/blog/houston-office-event-coffee-setup//
+- https://visionary-grinders.netlify.app/blog/how-much-coffee-do-you-need-for-an-event//
+- https://visionary-grinders.netlify.app/blog/iced-latte-vs-cold-brew//
+- https://visionary-grinders.netlify.app/blog//
+- https://visionary-grinders.netlify.app/blog/mobile-coffee-bar-vs-coffee-catering//
+- https://visionary-grinders.netlify.app/blog/what-is-a-coffee-pop-up//
+- https://visionary-grinders.netlify.app/book//
+- https://visionary-grinders.netlify.app/events/brand-collaborations//
+- https://visionary-grinders.netlify.app/events/community-gatherings//
+- https://visionary-grinders.netlify.app/events/graduation-parties//
+- https://visionary-grinders.netlify.app/events//
+- https://visionary-grinders.netlify.app/events/private-celebrations//
+- https://visionary-grinders.netlify.app/events/weddings//
+- https://visionary-grinders.netlify.app/events/workplace-events//
+- https://visionary-grinders.netlify.app/faq//
 - https://visionary-grinders.netlify.app/
-- https://visionary-grinders.netlify.app/menu/
-- https://visionary-grinders.netlify.app/events/
-- https://visionary-grinders.netlify.app/events/private-celebrations/
-- https://visionary-grinders.netlify.app/events/workplace-events/
-- https://visionary-grinders.netlify.app/events/community-gatherings/
-- https://visionary-grinders.netlify.app/events/brand-collaborations/
-- https://visionary-grinders.netlify.app/about/
-- https://visionary-grinders.netlify.app/merch/
-- https://visionary-grinders.netlify.app/faq/
-- https://visionary-grinders.netlify.app/book/
-- https://visionary-grinders.netlify.app/service-areas/
-- https://visionary-grinders.netlify.app/service-areas/downtown-houston/
-- https://visionary-grinders.netlify.app/service-areas/galleria-uptown/
-- https://visionary-grinders.netlify.app/service-areas/katy/
-- https://visionary-grinders.netlify.app/service-areas/sugar-land/
-- https://visionary-grinders.netlify.app/service-areas/the-woodlands/
-- https://visionary-grinders.netlify.app/service-areas/pearland/
-- https://visionary-grinders.netlify.app/service-areas/cypress/
-- https://visionary-grinders.netlify.app/service-areas/spring/
-- https://visionary-grinders.netlify.app/service-areas/missouri-city/
-- https://visionary-grinders.netlify.app/service-areas/humble/
-- https://visionary-grinders.netlify.app/blog/
-- https://visionary-grinders.netlify.app/blog/what-is-a-coffee-pop-up/
-- https://visionary-grinders.netlify.app/blog/how-much-coffee-do-you-need-for-an-event/
-- https://visionary-grinders.netlify.app/blog/coffee-bar-for-bridal-and-baby-showers/
-- https://visionary-grinders.netlify.app/blog/mobile-coffee-bar-vs-coffee-catering/
-- https://visionary-grinders.netlify.app/blog/employee-appreciation-coffee-ideas/
-- https://visionary-grinders.netlify.app/blog/coffee-for-fundraisers-and-church-events/
-- https://visionary-grinders.netlify.app/blog/hot-vs-iced-coffee-for-houston-events/
-- https://visionary-grinders.netlify.app/blog/iced-latte-vs-cold-brew/
-- https://visionary-grinders.netlify.app/blog/coffee-pop-up-booking-checklist/
+- https://visionary-grinders.netlify.app/industries/churches//
+- https://visionary-grinders.netlify.app/industries/corporate-office-coffee//
+- https://visionary-grinders.netlify.app/industries/healthcare-staff-appreciation//
+- https://visionary-grinders.netlify.app/industries/hotels-and-conferences//
+- https://visionary-grinders.netlify.app/industries//
+- https://visionary-grinders.netlify.app/industries/nonprofits-and-fundraisers//
+- https://visionary-grinders.netlify.app/industries/property-management//
+- https://visionary-grinders.netlify.app/industries/real-estate-events//
+- https://visionary-grinders.netlify.app/industries/retail-and-grand-openings//
+- https://visionary-grinders.netlify.app/industries/schools-and-universities//
+- https://visionary-grinders.netlify.app/menu//
+- https://visionary-grinders.netlify.app/merch//
+- https://visionary-grinders.netlify.app/service-areas/cypress//
+- https://visionary-grinders.netlify.app/service-areas/downtown-houston//
+- https://visionary-grinders.netlify.app/service-areas/galleria-uptown//
+- https://visionary-grinders.netlify.app/service-areas/humble//
+- https://visionary-grinders.netlify.app/service-areas//
+- https://visionary-grinders.netlify.app/service-areas/katy//
+- https://visionary-grinders.netlify.app/service-areas/missouri-city//
+- https://visionary-grinders.netlify.app/service-areas/pearland//
+- https://visionary-grinders.netlify.app/service-areas/spring//
+- https://visionary-grinders.netlify.app/service-areas/sugar-land//
+- https://visionary-grinders.netlify.app/service-areas/the-woodlands//
+- https://visionary-grinders.netlify.app/services/coffee-catering-houston//
+- https://visionary-grinders.netlify.app/services/mobile-coffee-bar-houston//
