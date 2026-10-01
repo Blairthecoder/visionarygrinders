@@ -196,3 +196,5 @@ html{-webkit-text-size-adjust:100%}
 @media(min-width:1001px){.cards.photo:has(>:nth-child(3):last-child){grid-template-columns:repeat(3,1fr)}}
 .cards.photo>.photo-card{min-height:420px}
 .section.dark .cards.photo{margin-top:1.5em}
+.page-hero[style*="--hero"]{background:linear-gradient(90deg,rgba(20,17,15,.94) 0%,rgba(20,17,15,.82) 50%,rgba(20,17,15,.66) 100%),var(--hero) var(--pos,center)/cover no-repeat,var(--ink)}
+@media(max-width:860px){.page-hero[style*="--hero"]{background:linear-gradient(rgba(20,17,15,.88),rgba(20,17,15,.8)),var(--hero) var(--pos,center)/cover no-repeat,var(--ink)}}
