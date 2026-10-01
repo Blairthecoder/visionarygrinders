@@ -211,3 +211,5 @@ html{-webkit-text-size-adjust:100%}
 .calc label{display:block;margin:.8em 0 .3em;font-weight:600}
 .calc input,.calc select{font:inherit;padding:.6em .8em;border:1px solid #d8cdbd;border-radius:10px;width:100%;max-width:320px;background:#fff}
 .calc output{display:block;margin-top:1.1em;font-size:1.15rem;font-weight:600}
+.section.cream>p,.section.cream>ul,.section.cream>ol,.section.cream>.faq,.section.dark>p,.section.dark>ul,.section.dark>ol,.section.dark>.faq{max-width:860px;margin-left:max(0px,calc((100% - 1200px)/2));margin-right:0}
+.section.cream>ul.linklist,.section.dark>ul.linklist{max-width:1200px;margin-left:auto;margin-right:auto}
