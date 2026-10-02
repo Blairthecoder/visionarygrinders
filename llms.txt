@@ -12,6 +12,7 @@ Book: https://visionary-grinders.netlify.app/book/
 - Menu: specialty lattes (including honey vanilla and brown sugar), classic espresso drinks and cold brew, served hot or iced, made to order
 - Event types: private celebrations, workplace events, community gatherings, brand collaborations, weddings, graduation parties
 - Industries: corporate and office, real estate, healthcare, schools and universities, churches, property management, hotels and conferences, retail and grand openings, nonprofits
+- Email: hello@visionarygrinderscoffee.com
 - How to book: inquiry form at /book/ (date, guest count, location, event type)
 - Pricing: quoted per event after inquiry; see /blog/coffee-pop-up-cost-houston/ for what affects cost
 
