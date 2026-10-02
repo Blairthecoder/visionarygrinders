@@ -221,3 +221,7 @@ html{-webkit-text-size-adjust:100%}
 .section>.ticks{max-width:860px}
 
 .product-view{max-width:900px;margin:0 auto}.product-view img{width:100%;height:auto;border-radius:var(--r);background:#fff}.product-view figcaption{margin-top:.75em;text-align:center;font-size:.95rem;opacity:.8}
+
+.signup{display:flex;gap:10px;max-width:480px;margin:14px auto 0}.signup input[type=email]{flex:1;min-width:0;padding:.7em .9em;font:inherit;border:1.5px solid #d6c9b7;border-radius:10px;background:#fff;color:var(--ink)}.signup .hp{display:none}.signup-band .section-head{text-align:center}.foot-signup{margin-top:18px}.foot-signup h2{margin:0 0 .4em}.foot-signup .signup{margin:10px 0 0}.site-footer .signup input[type=email]{border-color:#3a322b}@media(max-width:560px){.signup{flex-direction:column}.signup input[type=email]{flex:none;font-size:16px}}
+
+.signup-strip{align-items:center;gap:12px 28px;text-align:left}.signup-strip p{margin:0}.signup-strip .signup{margin:0;max-width:420px;flex:1 1 320px}.signup-strip .signup .btn{background:var(--ink);color:#fff;border-color:var(--ink)}@media(max-width:860px){.signup-strip{display:flex;flex-direction:column;align-items:stretch;padding:18px 5vw;text-align:center}.signup-strip .signup{max-width:none;flex:none}}
