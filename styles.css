@@ -219,3 +219,5 @@ html{-webkit-text-size-adjust:100%}
 .steps li{counter-increment:s;position:relative;padding:.7em 0 .7em 2.8em;border-bottom:1px solid #e6dccd}
 .steps li::before{content:counter(s);position:absolute;left:0;top:.65em;width:1.9em;height:1.9em;border-radius:50%;background:var(--orange);color:var(--ink);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.9rem}
 .section>.ticks{max-width:860px}
+
+.product-view{max-width:900px;margin:0 auto}.product-view img{width:100%;height:auto;border-radius:var(--r);background:#fff}.product-view figcaption{margin-top:.75em;text-align:center;font-size:.95rem;opacity:.8}
