@@ -4,7 +4,7 @@ Code-side work is done. These need real business data and should not be guessed.
 
 | Priority | Item | Needed from owner |
 |---|---|---|
-| 1 | Custom domain | Register a domain, point Netlify at it, then find/replace `visionary-grinders.netlify.app` across HTML, `sitemap.xml`, `robots.txt`, `llms.txt`; add 301s from the netlify.app host |
+| 1 | ~~Custom domain~~ Done: `visionarygrinderscoffee.com` is primary on Netlify; site URLs, `sitemap.xml`, `robots.txt` and `llms.txt` updated. Netlify redirects the netlify.app host to the primary domain | Submit the new sitemap in Search Console |
 | 2 | Analytics | GA4 measurement ID and Search Console verification. `thanks.html` already fires `generate_lead` once `gtag` is loaded |
 | 3 | Contact links | Business phone and email, to add click-to-call/text/mailto in header, footer and `/book/`, and `telephone` in the homepage schema |
 | 4 | Pricing | Starting-at ranges, minimums and lead time. Add to At a Glance blocks, `/book/`, FAQ and the cost post; add `priceRange` to schema |
