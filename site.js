@@ -4,6 +4,9 @@
   var sticky=doc.querySelector('.sticky-cta');
   var heroPast=false,blockers=new Set();
 
+  var year=doc.getElementById('yr');
+  if(year)year.textContent=new Date().getFullYear();
+
   function menuOpen(){return !!header&&header.classList.contains('open')}
 
   function renderSticky(){
@@ -35,20 +38,39 @@
 
   if(sticky&&'IntersectionObserver' in window){
     var hero=doc.getElementById('hero-cta');
-    var headerH=header?header.offsetHeight:0;
     if(hero){
       new IntersectionObserver(function(entries){
         var e=entries[entries.length-1];
-        heroPast=!e.isIntersecting&&e.boundingClientRect.bottom<=headerH;
+        heroPast=!e.isIntersecting&&e.boundingClientRect.bottom<=0;
         renderSticky();
-      },{rootMargin:'-'+headerH+'px 0px 0px 0px'}).observe(hero);
+      }).observe(hero);
     }
     var seen=new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(e.isIntersecting)blockers.add(e.target);else blockers.delete(e.target);
       });
       renderSticky();
-    },{rootMargin:'-'+headerH+'px 0px 0px 0px'});
+    });
     doc.querySelectorAll('[data-primary-cta]:not(#hero-cta), form.form, .site-footer').forEach(function(el){seen.observe(el)});
   }
+
+  /* Keep analytics out of the rendering path. Real interaction loads GA immediately;
+     the timer still records engaged visitors who read without interacting. */
+  var analyticsLoaded=false;
+  function loadAnalytics(){
+    if(analyticsLoaded)return;
+    analyticsLoaded=true;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=window.gtag||function(){window.dataLayer.push(arguments)};
+    window.gtag('js',new Date());
+    window.gtag('config','G-VW0LYN6GD6');
+    var script=doc.createElement('script');
+    script.async=true;
+    script.src='https://www.googletagmanager.com/gtag/js?id=G-VW0LYN6GD6';
+    doc.head.appendChild(script);
+  }
+  ['pointerdown','keydown','touchstart','scroll'].forEach(function(eventName){
+    window.addEventListener(eventName,loadAnalytics,{once:true,passive:true});
+  });
+  window.setTimeout(loadAnalytics,15000);
 })();
