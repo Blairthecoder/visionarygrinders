@@ -43,32 +43,34 @@
 <section class="section">
   <form name="event-inquiry" method="POST" action="/thanks.html" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" class="form">
     <input type="hidden" name="form-name" value="event-inquiry">
-    <p class="hp"><label>Don't fill this out <input name="bot-field"></label></p>
+    <p class="hp" aria-hidden="true" inert><label>Don't fill this out <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+    <p class="form-note">Fields marked <span class="req" aria-hidden="true">*</span><span class="sr">with an asterisk</span> are required. Phone and preferred contact method are optional.</p>
     <div class="grid">
-      <label>Name<input type="text" name="name" required autocomplete="name"></label>
-      <label>Email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Name <span class="req" aria-hidden="true">*</span><input type="text" name="name" required autocomplete="name"></label>
+      <label>Email <span class="req" aria-hidden="true">*</span><input type="email" name="email" required autocomplete="email"></label>
       <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
       <label>Preferred Contact Method
         <select name="contact-method"><option>Email</option><option>Phone call</option><option>Text</option></select>
       </label>
-      <label>Event Date<input type="date" name="event-date" required></label>
-      <label>Estimated Guest Count<input type="number" name="guest-count" min="1" inputmode="numeric" required></label>
-      <label>Event Start Time<input type="time" name="event-start-time" required></label>
-      <label>Desired Service Duration
+      <label>Event Date <span class="req" aria-hidden="true">*</span><input type="date" name="event-date" required></label>
+      <label>Estimated Guest Count <span class="req" aria-hidden="true">*</span><input type="number" name="guest-count" min="1" inputmode="numeric" required></label>
+      <label>Event Start Time <span class="req" aria-hidden="true">*</span><input type="time" name="event-start-time" required></label>
+      <label>Desired Service Duration <span class="req" aria-hidden="true">*</span>
         <select name="service-duration" required>
           <option value="">Select one</option><option>1 hour</option><option>2 hours</option><option>3 hours</option><option>4 hours</option><option>5+ hours</option><option>Not sure yet</option>
         </select>
       </label>
-      <label class="wide">Event Location (Venue or City)<input type="text" name="location" required></label>
-      <label class="wide">Event Type
+      <label class="wide">Event Location (Venue or City) <span class="req" aria-hidden="true">*</span><input type="text" name="location" required></label>
+      <label class="wide">Event Type <span class="req" aria-hidden="true">*</span>
         <select name="event-type" id="event-type" required>
           <option value="">Select one</option><option>Private celebration</option><option>Workplace event</option><option>Community gathering</option><option>Brand collaboration</option><option>Other</option>
         </select>
       </label>
-      <label class="wide">What Are You Looking For?<textarea name="details" rows="5" placeholder="Drinks you have in mind, timing, vibe, anything else we should know." required></textarea></label>
+      <label class="wide">What Are You Looking For? <span class="req" aria-hidden="true">*</span><textarea name="details" rows="5" placeholder="Drinks you have in mind, timing, vibe, anything else we should know." required></textarea></label>
     </div>
     <div class="recaptcha" data-netlify-recaptcha="true"></div>
     <button class="btn" type="submit">Send Inquiry</button>
+    <p class="form-assure"><strong>Expect a reply within 1 business day.</strong> We use your details only to respond to your inquiry and never sell or share them.</p>
   </form>
 </section>
 <section class="section"><div class="section-head"><h2>What Happens Next</h2></div><ol class="ticks" style="list-style:none"><li><b>1. You send the details.</b> Date, guest count, location, event type and what you have in mind.</li><li><b>2. We follow up.</b> We talk through your event, the setup and what we can serve.</li><li><b>3. We confirm.</b> Once the plan fits, we lock in your date.</li></ol></section>
@@ -94,7 +96,8 @@
   <nav aria-label="Footer Service Areas"><h2>Service Areas</h2><ul><li><a href="/service-areas/downtown-houston/">Downtown Houston</a></li><li><a href="/service-areas/galleria-uptown/">Galleria and Uptown Houston</a></li><li><a href="/service-areas/katy/">Katy, TX</a></li><li><a href="/service-areas/sugar-land/">Sugar Land, TX</a></li><li><a href="/service-areas/the-woodlands/">The Woodlands, TX</a></li><li><a href="/service-areas/pearland/">Pearland, TX</a></li><li><a href="/service-areas/cypress/">Cypress, TX</a></li><li><a href="/service-areas/spring/">Spring, TX</a></li><li><a href="/service-areas/missouri-city/">Missouri City, TX</a></li><li><a href="/service-areas/humble/">Humble, TX</a></li></ul></nav>
   <p class="copy">&copy; <span id="yr">2026</span> Visionary Grinders. All Rights Reserved.</p>
 </footer>
-<script>document.getElementById('yr').textContent=new Date().getFullYear();(function(){var b=document.querySelector('.nav-toggle'),h=document.querySelector('.site-header');if(!b)return;b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o)});})();</script>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+<script src="/site.js" defer></script>
 <script>
 (function(){try{var t=new URLSearchParams(location.search).get("type");var s=document.getElementById("event-type");if(t&&s){for(var i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break;}}}}catch(e){}})();
 </script>
