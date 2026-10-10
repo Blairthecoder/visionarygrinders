@@ -256,3 +256,29 @@ html{-webkit-text-size-adjust:100%}
 }
 .foot-brand{min-width:0;overflow-wrap:anywhere}
 @media(max-width:380px){.site-footer{grid-template-columns:1fr}}
+
+/* ---------- Shirt presale ---------- */
+.presale-popup{position:fixed;top:12px;left:50%;z-index:100;width:min(680px,calc(100% - 24px));padding:22px 58px 20px 24px;transform:translate(-50%,-130%);opacity:0;background:var(--ink2);color:#fff;border:2px solid var(--orange);border-radius:var(--r);box-shadow:0 16px 50px rgba(0,0,0,.45);text-align:center;transition:transform .25s ease,opacity .25s ease}
+.presale-popup.show{transform:translate(-50%,0);opacity:1}
+.presale-popup .eyebrow{margin:0 0 3px;color:var(--orange)}
+.presale-title{margin:0 0 10px;font:800 clamp(1.35rem,4vw,1.9rem)/1.1 Georgia,"Times New Roman",serif}
+.presale-clock{display:flex;justify-content:center;gap:8px;margin:0 auto 12px}
+.presale-clock>span{min-width:74px;padding:8px 10px;background:var(--ink);border:1px solid #4a4038;border-radius:10px}
+.presale-clock strong,.presale-clock small{display:block}
+.presale-clock strong{color:var(--orange);font:800 1.45rem/1 Georgia,"Times New Roman",serif;font-variant-numeric:tabular-nums}
+.presale-clock small{margin-top:4px;font-size:.67rem;text-transform:uppercase;letter-spacing:.08em;color:#ddd1c5}
+.presale-clock .presale-ended{width:100%;padding:10px 14px;color:#fff;font-weight:600}
+.presale-details{margin:0 0 14px;color:#e6ddd2;font-size:.88rem;line-height:1.4}
+.presale-close{position:absolute;top:8px;right:10px;width:44px;height:44px;border:0;background:transparent;color:#fff;font:300 2rem/1 system-ui,sans-serif;cursor:pointer;border-radius:50%}
+.presale-close:hover{background:rgba(255,255,255,.1)}
+.presale-popup .btn{min-height:44px}
+.presale-note{margin:1.2em 0;padding:14px 16px;background:rgba(232,135,43,.12);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;color:#f4eadf}
+@media(max-width:560px){
+  .presale-popup{top:8px;padding:18px 42px 16px 14px}
+  .presale-clock{gap:5px}
+  .presale-clock>span{min-width:0;flex:1;padding:7px 4px}
+  .presale-clock strong{font-size:1.2rem}
+  .presale-details{font-size:.78rem}
+  .presale-popup .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.presale-popup{transition:none}}
