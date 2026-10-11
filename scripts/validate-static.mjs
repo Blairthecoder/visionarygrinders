@@ -23,7 +23,7 @@ const outdated = [];
 const files = await htmlFiles(root);
 for (const file of files) {
   const html = await readFile(file, 'utf8');
-  if (!html.includes('<style data-site-styles>') || !html.includes('<script src="/site.js" defer></script>')) {
+  if (!html.includes('<style data-site-styles>') || !/<script src="\/site\.js\?v=[a-f0-9]{8}" defer><\/script>/.test(html)) {
     outdated.push(file);
   }
   for (const match of html.matchAll(/(?:src|href)=["'](\/[^/"'#?]*)/g)) {

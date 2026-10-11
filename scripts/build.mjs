@@ -1,4 +1,5 @@
 import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { basename, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,7 +15,10 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
 }
 
 const styles = (await readFile(join(root, 'styles.css'), 'utf8')).trim();
+const siteScriptHash = createHash('sha256').update(await readFile(join(root, 'site.js'))).digest('hex').slice(0, 8);
 const inlineStyles = `<style data-site-styles>\n${styles}\n</style>`;
+const siteScript = `<script src="/site.js?v=${siteScriptHash}" defer></script>`;
+const existingSiteScript = /<script src="\/site\.js(?:\?v=[^"]*)?" defer><\/script>/;
 const googleTag = /<!-- Google tag \(gtag\.js\) -->\s*<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-VW0LYN6GD6"><\/script>\s*<script>[\s\S]*?gtag\('config', 'G-VW0LYN6GD6'\);\s*<\/script>\s*/;
 const fontAndCssLinks = /<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com">\s*<link rel="preconnect" href="https:\/\/fonts\.gstatic\.com" crossorigin>\s*<link href="https:\/\/fonts\.googleapis\.com\/css2[^>]+>\s*<link rel="stylesheet" href="\/styles\.css">/;
 const oldInlineNavigation = /<script>document\.getElementById\('yr'\)\.textContent=new Date\(\)\.getFullYear\(\);\(function\(\)\{var b=document\.querySelector\('\.nav-toggle'\),h=document\.querySelector\('\.site-header'\);if\(!b\)return;b\.addEventListener\('click',function\(\)\{var o=h\.classList\.toggle\('open'\);b\.setAttribute\('aria-expanded',o\)\}\);\}\)\(\);<\/script>/;
@@ -36,9 +40,11 @@ for (const file of await htmlFiles(output)) {
   html = html.replace(googleTag, '');
   html = html.replace(fontAndCssLinks, inlineStyles);
   html = html.replace('<link rel="stylesheet" href="/styles.css">', inlineStyles);
-  html = html.replace(oldInlineNavigation, '<script src="/site.js" defer></script>');
-  if (!html.includes('<script src="/site.js" defer></script>')) {
-    html = html.replace('</body>', '<script src="/site.js" defer></script>\n</body>');
+  html = html.replace(oldInlineNavigation, siteScript);
+  if (existingSiteScript.test(html)) {
+    html = html.replace(existingSiteScript, siteScript);
+  } else {
+    html = html.replace('</body>', `${siteScript}\n</body>`);
   }
   if (!html.includes('rel="icon"')) {
     html = html.replace('<meta name="theme-color" content="#14110f">', '<meta name="theme-color" content="#14110f">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">');

@@ -106,6 +106,7 @@
       window.setTimeout(function(){popup.remove()},250);
     }
     popup.querySelector('.presale-close').addEventListener('click',closePresale);
+    popup.querySelector('.presale-link').addEventListener('click',closePresale);
     doc.addEventListener('keydown',function(e){
       if((e.key==='Escape'||e.key==='Esc')&&popup.isConnected)closePresale();
     });
