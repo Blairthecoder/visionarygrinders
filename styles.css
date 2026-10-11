@@ -258,27 +258,44 @@ html{-webkit-text-size-adjust:100%}
 @media(max-width:380px){.site-footer{grid-template-columns:1fr}}
 
 /* ---------- Shirt presale ---------- */
-.presale-popup{position:fixed;top:12px;left:50%;z-index:100;width:min(680px,calc(100% - 24px));padding:22px 58px 20px 24px;transform:translate(-50%,-130%);opacity:0;background:var(--ink2);color:#fff;border:2px solid var(--orange);border-radius:var(--r);box-shadow:0 16px 50px rgba(0,0,0,.45);text-align:center;transition:transform .25s ease,opacity .25s ease}
-.presale-popup.show{transform:translate(-50%,0);opacity:1}
-.presale-popup .eyebrow{margin:0 0 3px;color:var(--orange)}
-.presale-title{margin:0 0 10px;font:800 clamp(1.35rem,4vw,1.9rem)/1.1 Georgia,"Times New Roman",serif}
-.presale-clock{display:flex;justify-content:center;gap:8px;margin:0 auto 12px}
-.presale-clock>span{min-width:74px;padding:8px 10px;background:var(--ink);border:1px solid #4a4038;border-radius:10px}
+.presale-popup{position:fixed;top:50%;left:50%;z-index:100;width:min(760px,calc(100% - 32px));max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;padding:38px 52px 40px;transform:translate(-50%,calc(-50% - 18px)) scale(.98);opacity:0;background:var(--ink2);color:#fff;border:2px solid var(--orange);border-radius:20px;box-shadow:0 24px 80px rgba(0,0,0,.58),0 0 0 100vmax rgba(20,17,15,.58);text-align:center;transition:transform .25s ease,opacity .25s ease}
+.presale-popup.show{transform:translate(-50%,-50%) scale(1);opacity:1}
+.presale-popup .eyebrow{margin:0 0 7px;color:var(--orange);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.presale-title{margin:0 0 18px;font:800 clamp(1.8rem,4vw,2.55rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.015em}
+.presale-clock{display:flex;justify-content:center;gap:12px;margin:0 auto 20px}
+.presale-clock>span{min-width:86px;padding:12px 10px 11px;background:var(--ink);border:1px solid #4a4038;border-radius:12px}
 .presale-clock strong,.presale-clock small{display:block}
-.presale-clock strong{color:var(--orange);font:800 1.45rem/1 Georgia,"Times New Roman",serif;font-variant-numeric:tabular-nums}
-.presale-clock small{margin-top:4px;font-size:.67rem;text-transform:uppercase;letter-spacing:.08em;color:#ddd1c5}
+.presale-clock strong{color:var(--orange);font:800 1.7rem/1 Georgia,"Times New Roman",serif;font-variant-numeric:tabular-nums}
+.presale-clock small{margin-top:6px;font:600 .66rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#ddd1c5}
 .presale-clock .presale-ended{width:100%;padding:10px 14px;color:#fff;font-weight:600}
-.presale-details{margin:0 0 14px;color:#e6ddd2;font-size:.88rem;line-height:1.4}
-.presale-close{position:absolute;top:8px;right:10px;width:44px;height:44px;border:0;background:transparent;color:#fff;font:300 2rem/1 system-ui,sans-serif;cursor:pointer;border-radius:50%}
+.presale-details{display:flex;flex-wrap:wrap;justify-content:center;gap:7px 20px;list-style:none;margin:0 0 24px;padding:0;color:#e6ddd2;font:500 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+.presale-details li{position:relative}
+.presale-details li+li::before{content:"";position:absolute;left:-11px;top:.5em;width:4px;height:4px;border-radius:50%;background:var(--orange)}
+.presale-signup-copy{margin:0 0 10px;font:400 .94rem/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:#e6ddd2}
+.presale-signup-copy strong{color:#fff}
+.presale-signup{display:flex;align-items:stretch;gap:10px;width:min(540px,100%);margin:0 auto 16px}
+.presale-signup input[type=email]{flex:1;min-width:0;padding:.78em 1em;font:inherit;border:1.5px solid #5b5048;border-radius:999px;background:#fff;color:var(--ink)}
+.presale-signup input[type=email]:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.presale-signup .btn{white-space:nowrap}
+.presale-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;color:var(--orange);font:600 .92rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-underline-offset:4px}
+.presale-link:hover{color:#fff}
+.presale-close{position:absolute;top:14px;right:16px;width:44px;height:44px;border:0;background:transparent;color:#fff;font:300 2rem/1 system-ui,sans-serif;cursor:pointer;border-radius:50%}
 .presale-close:hover{background:rgba(255,255,255,.1)}
 .presale-popup .btn{min-height:44px}
 .presale-note{margin:1.2em 0;padding:14px 16px;background:rgba(232,135,43,.12);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;color:#f4eadf}
 @media(max-width:560px){
-  .presale-popup{top:8px;padding:18px 42px 16px 14px}
-  .presale-clock{gap:5px}
-  .presale-clock>span{min-width:0;flex:1;padding:7px 4px}
-  .presale-clock strong{font-size:1.2rem}
-  .presale-details{font-size:.78rem}
-  .presale-popup .btn{width:100%}
+  .presale-popup{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:32px 16px 26px;border-radius:16px}
+  .presale-popup .eyebrow{padding-right:28px;padding-left:28px;font-size:.7rem}
+  .presale-title{margin-bottom:15px;font-size:1.75rem}
+  .presale-clock{gap:5px;margin-bottom:17px}
+  .presale-clock>span{min-width:0;flex:1;padding:9px 3px}
+  .presale-clock strong{font-size:1.3rem}
+  .presale-clock small{font-size:.58rem;letter-spacing:.06em}
+  .presale-details{display:grid;gap:4px;margin-bottom:19px;font-size:.82rem}
+  .presale-details li+li::before{display:none}
+  .presale-signup{flex-direction:column;gap:8px}
+  .presale-signup input[type=email]{flex:none;font-size:16px;text-align:center}
+  .presale-signup .btn{width:100%}
+  .presale-close{top:8px;right:8px}
 }
 @media(prefers-reduced-motion:reduce){.presale-popup{transition:none}}

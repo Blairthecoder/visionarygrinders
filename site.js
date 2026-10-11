@@ -59,15 +59,22 @@
   function mountPresale(){
     var now=Date.now(),phase=presalePhase(now);
     updatePresaleForm(phase);
-    if(phase==='ended')return;
+    var pagePath=window.location.pathname.replace(/\/index\.html$/,'/');
+    if(pagePath!=='/'||phase==='ended')return;
     var popup=doc.createElement('aside');
     popup.className='presale-popup';
+    popup.setAttribute('role','dialog');
     popup.setAttribute('aria-label','Shirt presale countdown');
     popup.innerHTML='<button class="presale-close" type="button" aria-label="Close presale announcement">&times;</button>'+
-      '<p class="eyebrow">Coffee &amp; Culture Shirt</p><p class="presale-title" data-presale-title></p>'+
+      '<p class="eyebrow">Coffee &amp; Culture Shirt</p><h2 class="presale-title" data-presale-title></h2>'+
       '<div class="presale-clock" data-presale-clock aria-live="off"></div>'+
-      '<p class="presale-details">October 30–November 1, 2026 &nbsp;•&nbsp; Small–2X &nbsp;•&nbsp; Ships two weeks after ordering</p>'+
-      '<a class="btn btn-sm" href="/merch/#shirt-presale">View the Shirt Presale</a>';
+      '<ul class="presale-details"><li>October 30–November 1, 2026</li><li>Sizes Small–2X</li><li>Ships two weeks after ordering</li></ul>'+
+      '<div class="presale-signup-copy"><strong>Want a reminder?</strong> Sign up for presale updates.</div>'+
+      '<form name="newsletter" method="POST" action="/subscribed.html" data-netlify="true" netlify-honeypot="bot-field" class="presale-signup">'+
+        '<input type="hidden" name="form-name" value="newsletter"><p class="hp"><label>Don\'t fill this out <input name="bot-field"></label></p>'+
+        '<label class="sr" for="presale-email">Email address</label><input id="presale-email" type="email" name="email" required autocomplete="email" placeholder="Enter your email address">'+
+        '<button class="btn btn-sm" type="submit">Keep Me Updated</button></form>'+
+      '<a class="presale-link" href="/merch/#shirt-presale">View shirt details <span aria-hidden="true">&rarr;</span></a>';
     doc.body.appendChild(popup);
     window.requestAnimationFrame(function(){popup.classList.add('show')});
 
@@ -93,10 +100,14 @@
     }
     renderPresale();
     if(phase!=='ended')presaleTimer=window.setInterval(renderPresale,1000);
-    popup.querySelector('.presale-close').addEventListener('click',function(){
+    function closePresale(){
       window.clearInterval(presaleTimer);
       popup.classList.remove('show');
       window.setTimeout(function(){popup.remove()},250);
+    }
+    popup.querySelector('.presale-close').addEventListener('click',closePresale);
+    doc.addEventListener('keydown',function(e){
+      if((e.key==='Escape'||e.key==='Esc')&&popup.isConnected)closePresale();
     });
   }
 
