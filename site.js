@@ -89,7 +89,7 @@
         window.setTimeout(function(){popup.remove()},250);
         return;
       }
-      title.textContent=currentPhase==='before'?'Presale opens in':'Presale ends in';
+    title.textContent=currentPhase==='before'?'Presale Opens In':'Presale Ends In';
       var target=currentPhase==='before'?presaleStart:presaleEnd;
       /* Compare Houston wall-clock values so the advertised Friday-through-Sunday
          window displays as 72 hours even though daylight saving time ends Nov. 1. */
