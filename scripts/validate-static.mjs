@@ -20,6 +20,7 @@ async function htmlFiles(directory) {
 
 const missing = [];
 const outdated = [];
+const invalidStructuredData = [];
 const files = await htmlFiles(root);
 for (const file of files) {
   const html = await readFile(file, 'utf8');
@@ -32,11 +33,25 @@ for (const file of files) {
     if (url.endsWith('/')) target = join(target, 'index.html');
     if (!existsSync(target)) missing.push({ file, url });
   }
+  for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    try {
+      JSON.parse(match[1]);
+    } catch (error) {
+      invalidStructuredData.push({ file, error: error.message });
+    }
+  }
 }
 
-if (missing.length || outdated.length) {
-  console.error(JSON.stringify({ missing, outdated }, null, 2));
+const homeHtml = await readFile(join(root, 'index.html'), 'utf8');
+if (!homeHtml.includes('"@type": "Caterer"') ||
+    !homeHtml.includes('"hasMenu": "https://visionarygrinderscoffee.com/menu/"') ||
+    !homeHtml.includes('https://www.instagram.com/visionarygrinderscoffee/')) {
+  invalidStructuredData.push({ file: join(root, 'index.html'), error: 'Homepage business schema is missing GBP-aligned type, menu or profile data.' });
+}
+
+if (missing.length || outdated.length || invalidStructuredData.length) {
+  console.error(JSON.stringify({ missing, outdated, invalidStructuredData }, null, 2));
   process.exit(1);
 }
 
-console.log(`Validated ${files.length} HTML files with no missing local assets or stale critical-path markup.`);
+console.log(`Validated ${files.length} HTML files, local assets, critical-path markup and JSON-LD.`);
