@@ -21,7 +21,12 @@ const siteScript = `<script src="/site.js?v=${siteScriptHash}" defer></script>`;
 const existingSiteScript = /<script src="\/site\.js(?:\?v=[^"]*)?" defer><\/script>/;
 const googleTag = /<!-- Google tag \(gtag\.js\) -->\s*<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-VW0LYN6GD6"><\/script>\s*<script>[\s\S]*?gtag\('config', 'G-VW0LYN6GD6'\);\s*<\/script>\s*/;
 const fontAndCssLinks = /<link rel="preconnect" href="https:\/\/fonts\.googleapis\.com">\s*<link rel="preconnect" href="https:\/\/fonts\.gstatic\.com" crossorigin>\s*<link href="https:\/\/fonts\.googleapis\.com\/css2[^>]+>\s*<link rel="stylesheet" href="\/styles\.css">/;
-const oldInlineNavigation = /<script>document\.getElementById\('yr'\)\.textContent=new Date\(\)\.getFullYear\(\);\(function\(\)\{var b=document\.querySelector\('\.nav-toggle'\),h=document\.querySelector\('\.site-header'\);if\(!b\)return;b\.addEventListener\('click',function\(\)\{var o=h\.classList\.toggle\('open'\);b\.setAttribute\('aria-expanded',o\)\}\);\}\)\(\);<\/script>/;
+// Site-wide announcement bar, placed under the skip link on every page that has
+// one. site.js removes it once data-hide-after passes; delete these two lines
+// (and the replace below) after the event.
+const skipLink = '<a class="skip" href="#main">Skip to Content</a>';
+const announcement = '<a class="announce" href="/events/#next-popup" data-hide-after="2026-11-01T16:00:00-06:00">Come see us Sunday, Nov 1 at the Tribeca Lifestyle Market, 12–4 PM. <span>Details&nbsp;&rarr;</span></a>';
+const oldInlineNavigation =/<script>document\.getElementById\('yr'\)\.textContent=new Date\(\)\.getFullYear\(\);\(function\(\)\{var b=document\.querySelector\('\.nav-toggle'\),h=document\.querySelector\('\.site-header'\);if\(!b\)return;b\.addEventListener\('click',function\(\)\{var o=h\.classList\.toggle\('open'\);b\.setAttribute\('aria-expanded',o\)\}\);\}\)\(\);<\/script>/;
 
 async function htmlFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -49,6 +54,7 @@ for (const file of await htmlFiles(output)) {
   if (!html.includes('rel="icon"')) {
     html = html.replace('<meta name="theme-color" content="#14110f">', '<meta name="theme-color" content="#14110f">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">');
   }
+  html = html.replace(skipLink, `${skipLink}\n${announcement}`);
   html = html.replace(/(\/images\/[A-Za-z0-9-]+)\.jpg/g, '$1.webp');
   if (basename(file) === 'index.html' && file === join(output, 'index.html')) {
     html = html.replace(
