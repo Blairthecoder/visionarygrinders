@@ -114,6 +114,12 @@
 
   mountPresale();
 
+  /* Event announcements carry data-hide-after (an ISO time with offset) and
+     drop off the page once the event is over. */
+  doc.querySelectorAll('[data-hide-after]').forEach(function(el){
+    if(Date.now()>=Date.parse(el.getAttribute('data-hide-after')))el.remove();
+  });
+
   var year=doc.getElementById('yr');
   if(year)year.textContent=new Date().getFullYear();
 
