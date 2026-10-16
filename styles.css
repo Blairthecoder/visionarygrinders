@@ -43,6 +43,18 @@ a{color:inherit}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:5vw;align-items:center}
 .split.reverse>div{order:1}
 .split img{border-radius:var(--r);width:100%;max-height:600px;object-fit:cover}
+.split .flyer{max-width:420px;max-height:none;height:auto;object-fit:contain;justify-self:center}
+.next-popup{background:var(--cream);padding:28px 5vw}
+.next-popup-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px 40px}
+.next-popup h2{font-size:clamp(1.35rem,2.6vw,1.8rem);margin:0 0 .3em}
+.next-popup p{margin:0;text-wrap:pretty}
+.next-popup .eyebrow{margin-bottom:.4em}
+.next-popup .cta-row{margin-top:0}
+@media(max-width:860px){.next-popup-in{grid-template-columns:1fr}}
+.announce{display:block;padding:9px 5vw;background:var(--orange);color:var(--ink);text-align:center;text-decoration:none;font-size:.9rem;font-weight:600;line-height:1.4;text-wrap:balance}
+.announce span{text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.announce:hover span{text-decoration-thickness:2px}
+.announce:focus-visible{outline:3px solid var(--ink);outline-offset:-4px}
 .ticks{list-style:none;padding:0;margin:0 0 1.6em}
 .ticks li{padding:.55em 0 .55em 1.6em;position:relative;border-bottom:1px solid #e6dccd}
 .ticks li::before{content:"";position:absolute;left:0;top:1.15em;width:9px;height:9px;border-radius:50%;background:var(--orange)}
