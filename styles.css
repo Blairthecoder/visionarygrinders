@@ -57,6 +57,8 @@ a{color:inherit}
 .form.inline .btn,.form.inline .hp{grid-column:1/-1}
 .form.inline .btn{justify-self:start}
 .dark .form label{color:#fff}
+.form .opt-in{display:flex;align-items:center;gap:10px;font-weight:400;grid-column:1/-1}
+.form .opt-in input{flex:none;width:20px;height:20px;margin:0;padding:0;accent-color:var(--orange)}
 .hp{position:absolute;left:-9999px}
 .site-footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;background:var(--ink);color:#cfc5b9;padding:36px 5vw;font-size:.9rem}
 .site-footer p{margin:6px 0 0}

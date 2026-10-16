@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# submission-created.mjs syncs form signups to Mailchimp.
+[functions]
+  directory = "netlify/functions"
+
 [[headers]]
   for = "/images/*"
   [headers.values]
