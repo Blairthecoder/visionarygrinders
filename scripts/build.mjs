@@ -26,7 +26,7 @@ const fontAndCssLinks = /<link rel="preconnect" href="https:\/\/fonts\.googleapi
 // (and the replace below) after the event.
 const skipLink = '<a class="skip" href="#main">Skip to Content</a>';
 const announcement = '<a class="announce" href="/events/#next-popup" data-hide-after="2026-11-01T16:00:00-06:00">Come see us Sunday, Nov 1 at the Tribeca Lifestyle Market, 12–4 PM. <span>Details&nbsp;&rarr;</span></a>';
-const oldInlineNavigation =/<script>document\.getElementById\('yr'\)\.textContent=new Date\(\)\.getFullYear\(\);\(function\(\)\{var b=document\.querySelector\('\.nav-toggle'\),h=document\.querySelector\('\.site-header'\);if\(!b\)return;b\.addEventListener\('click',function\(\)\{var o=h\.classList\.toggle\('open'\);b\.setAttribute\('aria-expanded',o\)\}\);\}\)\(\);<\/script>/;
+const oldInlineNavigation = /<script>document\.getElementById\('yr'\)\.textContent=new Date\(\)\.getFullYear\(\);\(function\(\)\{var b=document\.querySelector\('\.nav-toggle'\),h=document\.querySelector\('\.site-header'\);if\(!b\)return;b\.addEventListener\('click',function\(\)\{var o=h\.classList\.toggle\('open'\);b\.setAttribute\('aria-expanded',o\)\}\);\}\)\(\);<\/script>/;
 
 async function htmlFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
