@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = join(root, 'dist');
-const excluded = new Set(['.git', '.github', '.netlify', 'dist', 'node_modules', 'scripts']);
+const excluded = new Set(['.git', '.github', '.netlify', 'dist', 'netlify', 'node_modules', 'scripts']);
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output);
