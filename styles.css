@@ -47,7 +47,7 @@ a{color:inherit}
 .next-popup{background:var(--cream);padding:28px 5vw}
 .next-popup-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px 40px}
 .next-popup h2{font-size:clamp(1.35rem,2.6vw,1.8rem);margin:0 0 .3em}
-.next-popup p{margin:0}
+.next-popup p{margin:0;text-wrap:pretty}
 .next-popup .eyebrow{margin-bottom:.4em}
 .next-popup .cta-row{margin-top:0}
 @media(max-width:860px){.next-popup-in{grid-template-columns:1fr}}
