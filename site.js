@@ -11,6 +11,15 @@
   var presaleEnd=new Date('2026-11-02T00:00:00-06:00').getTime();
   var presaleClock=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'});
   var presaleTimer;
+  var presaleDismissKey='vg-presale-dismissed';
+
+  function presaleDismissed(){
+    try{return window.localStorage.getItem(presaleDismissKey)==='1'}catch(e){return false}
+  }
+
+  function rememberPresaleDismissal(){
+    try{window.localStorage.setItem(presaleDismissKey,'1')}catch(e){}
+  }
 
   function presalePhase(now){
     if(now<presaleStart)return 'before';
@@ -60,7 +69,7 @@
     var now=Date.now(),phase=presalePhase(now);
     updatePresaleForm(phase);
     var pagePath=window.location.pathname.replace(/\/index\.html$/,'/');
-    if(pagePath!=='/'||phase==='ended')return;
+    if(pagePath!=='/'||phase==='ended'||presaleDismissed())return;
     var popup=doc.createElement('aside');
     popup.className='presale-popup';
     popup.setAttribute('role','dialog');
@@ -69,14 +78,17 @@
       '<p class="eyebrow">Coffee &amp; Culture Shirt</p><h2 class="presale-title" data-presale-title></h2>'+
       '<div class="presale-clock" data-presale-clock aria-live="off"></div>'+
       '<ul class="presale-details"><li>October 30–November 1, 2026</li><li>Sizes Small–2X</li><li>Ships two weeks after ordering</li></ul>'+
-      '<div class="presale-signup-copy"><strong>Want a reminder?</strong> Sign up for presale updates.</div>'+
+      '<div class="presale-signup-copy"><strong>Want a heads-up?</strong> We&rsquo;ll email you once, the morning it opens.</div>'+
       '<form name="newsletter" method="POST" action="/subscribed.html" data-netlify="true" netlify-honeypot="bot-field" class="presale-signup">'+
         '<input type="hidden" name="form-name" value="newsletter"><p class="hp"><label>Don\'t fill this out <input name="bot-field"></label></p>'+
-        '<label class="sr" for="presale-email">Email address</label><input id="presale-email" type="email" name="email" required autocomplete="email" placeholder="Enter your email address">'+
+        '<label class="sr" for="presale-email">Email address</label><input id="presale-email" type="email" name="email" required autocomplete="email" placeholder="you@email.com">'+
         '<button class="btn btn-sm" type="submit">Keep Me Updated</button></form>'+
-      '<a class="presale-link" href="/merch/#shirt-presale">View shirt details <span aria-hidden="true">&rarr;</span></a>';
+      '<a class="presale-link" href="/merch/#shirt-presale">See the shirt first <span aria-hidden="true">&rarr;</span></a>';
     doc.body.appendChild(popup);
-    window.requestAnimationFrame(function(){popup.classList.add('show')});
+    /* Let the hero land first; an instant modal reads like a template. */
+    window.setTimeout(function(){
+      if(popup.isConnected)popup.classList.add('show');
+    },2000);
 
     var title=popup.querySelector('[data-presale-title]');
     var clock=popup.querySelector('[data-presale-clock]');
@@ -101,6 +113,7 @@
     renderPresale();
     if(phase!=='ended')presaleTimer=window.setInterval(renderPresale,1000);
     function closePresale(){
+      rememberPresaleDismissal();
       window.clearInterval(presaleTimer);
       popup.classList.remove('show');
       window.setTimeout(function(){popup.remove()},250);

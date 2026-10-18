@@ -16,7 +16,12 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
 
 const styles = (await readFile(join(root, 'styles.css'), 'utf8')).trim();
 const siteScriptHash = createHash('sha256').update(await readFile(join(root, 'site.js'))).digest('hex').slice(0, 8);
-const inlineStyles = `<style data-site-styles>\n${styles}\n</style>`;
+// The two self-hosted faces sit behind the inlined CSS, so preload them.
+const fontPreloads = [
+  '<link rel="preload" href="/fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin>',
+  '<link rel="preload" href="/fonts/karla-variable.woff2" as="font" type="font/woff2" crossorigin>',
+].join('\n');
+const inlineStyles = `${fontPreloads}\n<style data-site-styles>\n${styles}\n</style>`;
 const siteScript = `<script src="/site.js?v=${siteScriptHash}" defer></script>`;
 const existingSiteScript = /<script src="\/site\.js(?:\?v=[^"]*)?" defer><\/script>/;
 const googleTag = /<!-- Google tag \(gtag\.js\) -->\s*<script async src="https:\/\/www\.googletagmanager\.com\/gtag\/js\?id=G-VW0LYN6GD6"><\/script>\s*<script>[\s\S]*?gtag\('config', 'G-VW0LYN6GD6'\);\s*<\/script>\s*/;
