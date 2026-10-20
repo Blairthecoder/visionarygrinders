@@ -225,8 +225,7 @@ html{-webkit-text-size-adjust:100%}
   .sticky-cta[hidden]{display:none}
   body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
   html{scroll-padding-bottom:calc(84px + env(safe-area-inset-bottom))}
-  html.menu-open,html.menu-open body{overflow:hidden}
-  .site-header.open{max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior:contain}
+  .site-header.open{max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
 }
 .glance{background:var(--cream);border-radius:var(--r);padding:22px 26px;max-width:860px}
 .glance h2{font-size:1.3rem;margin-bottom:.7em}
