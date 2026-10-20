@@ -146,6 +146,7 @@
   }
 
   function setMenu(open){
+    if(!header||!toggle)return;
     header.classList.toggle('open',open);
     toggle.setAttribute('aria-expanded',open?'true':'false');
     root.classList.toggle('menu-open',open);
@@ -154,6 +155,12 @@
 
   if(header&&toggle){
     toggle.addEventListener('click',function(){setMenu(!menuOpen())});
+    var nav=doc.getElementById('site-nav');
+    if(nav){
+      nav.addEventListener('click',function(e){
+        if(e.target.closest('a[href]'))setMenu(false);
+      });
+    }
     doc.addEventListener('keydown',function(e){
       if((e.key==='Escape'||e.key==='Esc')&&menuOpen()){
         setMenu(false);
@@ -163,6 +170,13 @@
     var mq=window.matchMedia('(min-width:861px)');
     var reset=function(){if(mq.matches&&menuOpen())setMenu(false)};
     if(mq.addEventListener)mq.addEventListener('change',reset);else if(mq.addListener)mq.addListener(reset);
+
+    /* Mobile browsers may restore this page from their back/forward cache with
+       its previous DOM classes intact. Always return with an unlocked, closed
+       menu, and clear the state before navigating away. */
+    var resetMenu=function(){setMenu(false)};
+    window.addEventListener('pagehide',resetMenu);
+    window.addEventListener('pageshow',resetMenu);
   }
 
   if(sticky&&'IntersectionObserver' in window){
