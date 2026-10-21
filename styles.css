@@ -225,7 +225,9 @@ html{-webkit-text-size-adjust:100%}
   .sticky-cta[hidden]{display:none}
   body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
   html{scroll-padding-bottom:calc(84px + env(safe-area-inset-bottom))}
-  .site-header.open{max-height:100vh;max-height:100dvh;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:860px) and (max-height:500px){
+  .site-header.open{max-height:100vh;max-height:100dvh;overflow-y:auto;-webkit-overflow-scrolling:touch}
 }
 .glance{background:var(--cream);border-radius:var(--r);padding:22px 26px;max-width:860px}
 .glance h2{font-size:1.3rem;margin-bottom:.7em}
