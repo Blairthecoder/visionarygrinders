@@ -57,6 +57,7 @@ h2{font-size:clamp(2rem,3.7vw,3.5rem)}h3{letter-spacing:-.025em}
 @media(max-width:400px){.hero .cta-row{flex-direction:column;align-items:stretch}.hero .cta-row .btn{width:100%}.hero .text-link{justify-content:center}.event-stories .photo-card,.drink-board .photo-card{grid-template-columns:1fr}.event-stories .photo-card img,.drink-board .photo-card img{aspect-ratio:4/3;max-height:300px}.grid{grid-template-columns:1fr}.quote-cta{flex-direction:column;align-items:stretch}.quote-cta .btn{width:100%!important}.booking-intro{display:block}.reply-note{margin-top:18px}}
 /* Reserve the expressive face for the brand and opening statement. */
 h2,h3{font-family:var(--font-body);font-weight:800;letter-spacing:-.035em;line-height:1.1}
+.page-hero h1{font-family:var(--font-body);font-weight:800;font-size:clamp(2rem,3.5vw,3.5rem);max-width:950px;letter-spacing:-.04em;line-height:1.08}
 .hero h1{font-size:clamp(2rem,3.2vw,3.8rem)}
 .hero{align-items:start}
 .hero-img img{max-height:clamp(300px,60vh,535px)}
@@ -67,4 +68,5 @@ h2,h3{font-family:var(--font-body);font-weight:800;letter-spacing:-.035em;line-h
 .gallery figure{overflow:hidden}
 .merch-feature .text-link span{display:none}
 @media(max-width:860px){.hero h1{font-size:clamp(1.45rem,6.4vw,3.4rem)}.hero-img{width:100%}.hero-img img{max-height:460px}.hero h1 em{white-space:normal}.hero .cta-row{flex-wrap:wrap}.hero .text-link{white-space:normal}.booking-layout .form{width:100%}.event-stories .photo-card img{height:100%;object-fit:cover}}
+@media(max-width:400px){.site-header .wordmark{font-size:.85rem}.hdr-actions{gap:7px}.hdr-actions .btn{font-size:.68rem;gap:8px;padding:.65em .8em}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.photo-card img{transition:none}.btn:hover,.gallery figure{transform:none!important}}
