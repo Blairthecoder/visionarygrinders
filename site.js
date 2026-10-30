@@ -21,7 +21,17 @@
     try{window.localStorage.setItem(presaleDismissKey,'1')}catch(e){}
   }
 
+  /* Branch deploys and local builds accept ?presale=before|live|ended so each
+     presale state can be reviewed ahead of the real window. Production ignores it. */
+  var presaleOverride=(function(){
+    var host=window.location.hostname;
+    if(!/--.+\.netlify\.app$/.test(host)&&host!=='localhost'&&host!=='127.0.0.1')return null;
+    var value=new URLSearchParams(window.location.search).get('presale');
+    return value==='before'||value==='live'||value==='ended'?value:null;
+  })();
+
   function presalePhase(now){
+    if(presaleOverride)return presaleOverride;
     if(now<presaleStart)return 'before';
     if(now<presaleEnd)return 'live';
     return 'ended';
@@ -52,10 +62,14 @@
     var heading=doc.querySelector('[data-presale-heading]');
     var copy=doc.querySelector('[data-presale-copy]');
     var submit=form.querySelector('[data-presale-submit]');
+    /* During the window the Stripe checkout replaces the waitlist form. */
+    var buy=doc.querySelector('[data-presale-buy]');
+    form.hidden=phase==='live'&&!!buy;
+    if(buy)buy.hidden=phase!=='live';
     if(phase==='live'){
       if(kicker)kicker.textContent='Presale is open through November 1';
-      if(heading)heading.textContent='Reserve Your Shirt';
-      if(copy)copy.textContent='Submit your presale request while the 72-hour window is open. Available in Small, Medium, Large, XL and 2X.';
+      if(heading)heading.textContent=buy?'Order Your Shirt':'Reserve Your Shirt';
+      if(copy)copy.textContent=buy?'The 72-hour presale is open. Order yours in Small, Medium, Large, XL or 2X while the window lasts.':'Submit your presale request while the 72-hour window is open. Available in Small, Medium, Large, XL and 2X.';
       if(submit)submit.textContent='Request My Shirt';
     }else if(phase==='ended'){
       if(kicker)kicker.textContent='Presale closed';
@@ -69,7 +83,21 @@
     var now=Date.now(),phase=presalePhase(now);
     updatePresaleForm(phase);
     var pagePath=window.location.pathname.replace(/\/index\.html$/,'/');
-    if(pagePath!=='/'||phase==='ended'||presaleDismissed())return;
+    if(pagePath!=='/'){
+      /* Flip the merch page at each window boundary for visitors already on it.
+         The delay is capped at the browser's setTimeout maximum (about 24 days). */
+      (function scheduleFlip(){
+        var current=Date.now(),currentPhase=presalePhase(current);
+        var boundary=currentPhase==='before'?presaleStart:currentPhase==='live'?presaleEnd:0;
+        if(!boundary||presaleOverride||!doc.querySelector('[data-presale-form]'))return;
+        window.setTimeout(function(){
+          updatePresaleForm(presalePhase(Date.now()));
+          scheduleFlip();
+        },Math.min(boundary-current+1000,2147483647));
+      })();
+      return;
+    }
+    if(phase==='ended'||presaleDismissed())return;
     var popup=doc.createElement('aside');
     popup.className='presale-popup';
     popup.setAttribute('role','dialog');
@@ -92,6 +120,7 @@
 
     var title=popup.querySelector('[data-presale-title]');
     var clock=popup.querySelector('[data-presale-clock]');
+    var link=popup.querySelector('.presale-link');
     function renderPresale(){
       var current=Date.now(),currentPhase=presalePhase(current);
       updatePresaleForm(currentPhase);
@@ -102,6 +131,13 @@
         return;
       }
     title.textContent=currentPhase==='before'?'Presale Opens In':'Presale Ends In';
+      /* Once the window opens, send visitors to checkout instead of the heads-up signup. */
+      var live=currentPhase==='live';
+      if(popup.classList.contains('is-live')!==live){
+        popup.classList.toggle('is-live',live);
+        link.classList.toggle('btn',live);
+        link.innerHTML=(live?'Order Your Shirt':'See the shirt first')+' <span aria-hidden="true">&rarr;</span>';
+      }
       var target=currentPhase==='before'?presaleStart:presaleEnd;
       /* Compare Houston wall-clock values so the advertised Friday-through-Sunday
          window displays as 72 hours even though daylight saving time ends Nov. 1. */
