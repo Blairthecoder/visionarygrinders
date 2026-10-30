@@ -68,5 +68,5 @@ h2,h3{font-family:var(--font-body);font-weight:800;letter-spacing:-.035em;line-h
 .gallery figure{overflow:hidden}
 .merch-feature .text-link span{display:none}
 @media(max-width:860px){.hero h1{font-size:clamp(1.45rem,6.4vw,3.4rem)}.hero-img{width:100%}.hero-img img{max-height:460px}.hero h1 em{white-space:normal}.hero .cta-row{flex-wrap:wrap}.hero .text-link{white-space:normal}.booking-layout .form{width:100%}.event-stories .photo-card img{height:100%;object-fit:cover}}
-@media(max-width:400px){.site-header .wordmark{font-size:.85rem}.hdr-actions{gap:7px}.hdr-actions .btn{font-size:.68rem;gap:8px;padding:.65em .8em}}
+@media(max-width:400px){.site-header{gap:8px;padding:10px 4vw}.site-header .wordmark{font-size:.75rem}.hdr-actions{gap:7px}.hdr-actions .btn{font-size:.68rem;gap:8px;padding:.65em .8em}.hero h1{font-size:clamp(1.1rem,6vw,1.5rem)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.photo-card img{transition:none}.btn:hover,.gallery figure{transform:none!important}}
