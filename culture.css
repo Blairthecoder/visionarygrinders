@@ -58,11 +58,13 @@ h2{font-size:clamp(2rem,3.7vw,3.5rem)}h3{letter-spacing:-.025em}
 /* Reserve the expressive face for the brand and opening statement. */
 h2,h3{font-family:var(--font-body);font-weight:800;letter-spacing:-.035em;line-height:1.1}
 .hero h1{font-size:clamp(2rem,3.2vw,3.8rem)}
+.hero{align-items:start}
+.hero-img img{max-height:clamp(300px,60vh,535px)}
 .hero-text,.hero-img,.photo-body,.booking-intro,.form{min-width:0}
 .event-stories .cards.photo>.photo-card,.drink-board .cards.photo>.photo-card{min-height:0}
 .event-stories .photo-card img{height:auto;align-self:stretch;min-height:0}
 .drink-board .photo-card img{min-height:0}
 .gallery figure{overflow:hidden}
 .merch-feature .text-link span{display:none}
-@media(max-width:860px){.hero h1{font-size:clamp(1.45rem,6.4vw,3.4rem)}.hero-img{width:100%}.hero h1 em{white-space:normal}.hero .cta-row{flex-wrap:wrap}.hero .text-link{white-space:normal}.booking-layout .form{width:100%}.event-stories .photo-card img{height:100%;object-fit:cover}}
+@media(max-width:860px){.hero h1{font-size:clamp(1.45rem,6.4vw,3.4rem)}.hero-img{width:100%}.hero-img img{max-height:460px}.hero h1 em{white-space:normal}.hero .cta-row{flex-wrap:wrap}.hero .text-link{white-space:normal}.booking-layout .form{width:100%}.event-stories .photo-card img{height:100%;object-fit:cover}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.photo-card img{transition:none}.btn:hover,.gallery figure{transform:none!important}}
