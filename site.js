@@ -120,6 +120,7 @@
 
     var title=popup.querySelector('[data-presale-title]');
     var clock=popup.querySelector('[data-presale-clock]');
+    var link=popup.querySelector('.presale-link');
     function renderPresale(){
       var current=Date.now(),currentPhase=presalePhase(current);
       updatePresaleForm(currentPhase);
@@ -130,6 +131,13 @@
         return;
       }
     title.textContent=currentPhase==='before'?'Presale Opens In':'Presale Ends In';
+      /* Once the window opens, send visitors to checkout instead of the heads-up signup. */
+      var live=currentPhase==='live';
+      if(popup.classList.contains('is-live')!==live){
+        popup.classList.toggle('is-live',live);
+        link.classList.toggle('btn',live);
+        link.innerHTML=(live?'Order Your Shirt':'See the shirt first')+' <span aria-hidden="true">&rarr;</span>';
+      }
       var target=currentPhase==='before'?presaleStart:presaleEnd;
       /* Compare Houston wall-clock values so the advertised Friday-through-Sunday
          window displays as 72 hours even though daylight saving time ends Nov. 1. */

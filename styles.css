@@ -303,13 +303,15 @@ html{-webkit-text-size-adjust:100%}
 .presale-signup .btn{white-space:nowrap}
 .presale-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;gap:.35em;color:var(--orange);font:600 .92rem/1.2 var(--font-body);text-underline-offset:4px}
 .presale-link:hover{color:#fff}
+.presale-popup.is-live .presale-signup-copy,.presale-popup.is-live .presale-signup{display:none}
+.presale-link.btn,.presale-link.btn:hover{color:var(--ink);font-weight:700;text-decoration:none}
 .presale-close{position:absolute;top:12px;right:12px;width:44px;height:44px;border:0;background:transparent;color:#bfb2a5;font:300 1.9rem/1 var(--font-body);cursor:pointer;border-radius:50%;transition:color .2s,background .2s}
 .presale-close:hover{background:rgba(255,255,255,.08);color:#fff}
 .presale-popup .btn{min-height:44px}
 .presale-note{margin:1.2em 0;padding:14px 16px;background:rgba(232,135,43,.12);border-left:4px solid var(--orange);border-radius:0 10px 10px 0;color:#f4eadf}
 .form[hidden],.presale-buy[hidden]{display:none}
 .presale-price{margin:0 0 1em;color:#f4eadf}
-.presale-price strong{margin-right:.15em;color:var(--orange);font:800 1.6rem/1 Georgia,"Times New Roman",serif}
+.presale-price strong{margin-right:.15em;color:var(--orange);font:800 1.6rem/1 var(--font-display)}
 .presale-secure{margin:.8em 0 0;font-size:.85rem;color:#cbbfb2}
 @media(max-width:560px){
   .presale-popup{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:32px 16px 26px;border-radius:16px}
