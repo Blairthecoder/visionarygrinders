@@ -111,7 +111,7 @@
         '<input type="hidden" name="form-name" value="newsletter"><p class="hp"><label>Don\'t fill this out <input name="bot-field"></label></p>'+
         '<label class="sr" for="presale-email">Email address</label><input id="presale-email" type="email" name="email" required autocomplete="email" placeholder="you@email.com">'+
         '<button class="btn btn-sm" type="submit">Keep Me Updated</button></form>'+
-      '<a class="presale-link" href="/merch/#shirt-presale">See the shirt first <span aria-hidden="true">&rarr;</span></a>';
+      '<a class="presale-link" href="/merch/#shirt-presale">See the shirt first</a>';
     doc.body.appendChild(popup);
     /* Let the hero land first; an instant modal reads like a template. */
     window.setTimeout(function(){
@@ -136,7 +136,7 @@
       if(popup.classList.contains('is-live')!==live){
         popup.classList.toggle('is-live',live);
         link.classList.toggle('btn',live);
-        link.innerHTML=(live?'Order Your Shirt':'See the shirt first')+' <span aria-hidden="true">&rarr;</span>';
+        link.textContent=live?'Order Your Shirt':'See the shirt first';
       }
       var target=currentPhase==='before'?presaleStart:presaleEnd;
       /* Compare Houston wall-clock values so the advertised Friday-through-Sunday

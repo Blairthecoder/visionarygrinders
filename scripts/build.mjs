@@ -16,10 +16,9 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
 
 const styles = (await readFile(join(root, 'styles.css'), 'utf8')).trim();
 const siteScriptHash = createHash('sha256').update(await readFile(join(root, 'site.js'))).digest('hex').slice(0, 8);
-// The two self-hosted faces sit behind the inlined CSS, so preload them.
+// The self-hosted face sits behind the inlined CSS, so preload it.
 const fontPreloads = [
-  '<link rel="preload" href="/fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin>',
-  '<link rel="preload" href="/fonts/karla-variable.woff2" as="font" type="font/woff2" crossorigin>',
+  '<link rel="preload" href="/fonts/hakter-variable.woff2" as="font" type="font/woff2" crossorigin>',
 ].join('\n');
 const inlineStyles = `${fontPreloads}\n<style data-site-styles>\n${styles}\n</style>`;
 const siteScript = `<script src="/site.js?v=${siteScriptHash}" defer></script>`;
@@ -30,7 +29,7 @@ const fontAndCssLinks = /<link rel="preconnect" href="https:\/\/fonts\.googleapi
 // one. site.js removes it once data-hide-after passes; delete these two lines
 // (and the replace below) after the event.
 const skipLink = '<a class="skip" href="#main">Skip to Content</a>';
-const announcement = '<a class="announce" href="/events/#next-popup" data-hide-after="2026-11-01T16:00:00-06:00">Come see us Sunday, Nov 1 at the Tribeca Lifestyle Market, 12–4 PM. <span>Details&nbsp;&rarr;</span></a>';
+const announcement = '<a class="announce" href="/events/#next-popup" data-hide-after="2026-11-01T16:00:00-06:00">Come see us Sunday, Nov 1 at the Tribeca Lifestyle Market, 12–4 PM. <span>Details</span></a>';
 const oldInlineNavigation = /<script>document\.getElementById\('yr'\)\.textContent=new Date\(\)\.getFullYear\(\);\(function\(\)\{var b=document\.querySelector\('\.nav-toggle'\),h=document\.querySelector\('\.site-header'\);if\(!b\)return;b\.addEventListener\('click',function\(\)\{var o=h\.classList\.toggle\('open'\);b\.setAttribute\('aria-expanded',o\)\}\);\}\)\(\);<\/script>/;
 
 async function htmlFiles(directory) {
