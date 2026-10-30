@@ -14,11 +14,11 @@ for (const entry of await readdir(root, { withFileTypes: true })) {
   await cp(join(root, entry.name), join(output, entry.name), { recursive: true });
 }
 
-const styles = (await readFile(join(root, 'styles.css'), 'utf8')).trim();
+const styles = [await readFile(join(root, 'styles.css'), 'utf8'), await readFile(join(root, 'culture.css'), 'utf8')].join('\n').trim();
 const siteScriptHash = createHash('sha256').update(await readFile(join(root, 'site.js'))).digest('hex').slice(0, 8);
 // The two self-hosted faces sit behind the inlined CSS, so preload them.
 const fontPreloads = [
-  '<link rel="preload" href="/fonts/fraunces-variable.woff2" as="font" type="font/woff2" crossorigin>',
+  '<link rel="preload" href="/fonts/mugen-bold.woff2" as="font" type="font/woff2" crossorigin>',
   '<link rel="preload" href="/fonts/karla-variable.woff2" as="font" type="font/woff2" crossorigin>',
 ].join('\n');
 const inlineStyles = `${fontPreloads}\n<style data-site-styles>\n${styles}\n</style>`;

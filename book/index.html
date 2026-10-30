@@ -31,16 +31,17 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ContactPage", "name": "Book a Houston Coffee Pop-Up", "url": "https://visionarygrinderscoffee.com/book/", "about": {"@id": "https://visionarygrinderscoffee.com/#business"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What Should I Include in My Inquiry?", "acceptedAnswer": {"@type": "Answer", "text": "Your event date, estimated guest count, venue or city, event type and any drinks or timing you have in mind."}}, {"@type": "Question", "name": "How Far in Advance Should I Book?", "acceptedAnswer": {"@type": "Answer", "text": "Send your inquiry as soon as you have a date. Popular dates, including graduation season and holidays, fill sooner."}}, {"@type": "Question", "name": "What Does a Coffee Pop-Up Cost?", "acceptedAnswer": {"@type": "Answer", "text": "Pricing depends on guest count, event length, menu, location and setup. We quote each event after we have your details."}}, {"@type": "Question", "name": "Where Do You Serve?", "acceptedAnswer": {"@type": "Answer", "text": "Houston, Katy, Sugar Land, The Woodlands, Pearland, Cypress, Spring, Missouri City and Humble."}}]}</script>
 </head>
-<body>
+<body class="booking-page">
 <a class="skip" href="#main">Skip to Content</a>
 <header class="site-header">
   <a class="brand" href="/" aria-label="Visionary Grinders Home"><span class="wordmark" aria-hidden="true"><span>Visionary</span><span>Grinders</span></span><span class="sr">Visionary Grinders</span></a>
-  <nav id="site-nav" aria-label="Main"><a href="/menu/">Menu</a><a href="/events/">Events</a><a href="/service-areas/">Service Areas</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/merch/">Merch</a><a href="/faq/">FAQ</a></nav>
-  <div class="hdr-actions"><a class="btn btn-sm" href="/book/">Book Us</a><button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button></div>
+  <nav id="site-nav" aria-label="Main"><a href="/menu/">Menu</a><a href="/events/">Events</a><a href="/about/">About</a><a href="/merch/">Merch</a><details class="nav-more"><summary>Explore <span aria-hidden="true">+</span></summary><div class="nav-more-links"><a href="/service-areas/">Service Areas</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a></div></details></nav>
+  <div class="hdr-actions"><a class="btn btn-sm" href="/book/">Book a Pop-Up</a><button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button></div>
 </header>
 <main id="main">
 <section class="page-hero" style="--hero:url(/images/vg-cup.jpg);--pos:50% 58%"><div class="page-hero-in"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <span aria-current="page">Book</span></nav><h1>Book a Houston Coffee Pop-Up</h1><p class="lead">Tell us about your event. Share a few details and we'll follow up to talk through your event and what we can serve.</p></div></section>
-<section class="section">
+<section class="section booking-layout">
+  <aside class="booking-intro"><p class="eyebrow">Your event, our coffee bar</p><h2>Let’s make it happen.</h2><p>Tell us your date, guest count and location.</p><p class="reply-note">Expect a reply within<br><strong>1 business day.</strong></p><img src="/images/jasmine-serving-sm.webp" alt="Jasmine with a freshly made Visionary Grinders iced latte" width="700" height="875" loading="lazy"></aside>
   <form name="event-inquiry" method="POST" action="/thanks.html" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" class="form">
     <input type="hidden" name="form-name" value="event-inquiry">
     <p class="hp" aria-hidden="true" inert><label>Don't fill this out <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
