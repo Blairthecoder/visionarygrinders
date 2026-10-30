@@ -11,6 +11,15 @@
   var presaleEnd=new Date('2026-11-02T00:00:00-06:00').getTime();
   var presaleClock=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'numeric',day:'numeric',hour:'numeric',minute:'numeric',second:'numeric',hourCycle:'h23'});
   var presaleTimer;
+  var presaleDismissKey='vg-presale-dismissed';
+
+  function presaleDismissed(){
+    try{return window.localStorage.getItem(presaleDismissKey)==='1'}catch(e){return false}
+  }
+
+  function rememberPresaleDismissal(){
+    try{window.localStorage.setItem(presaleDismissKey,'1')}catch(e){}
+  }
 
   /* Branch deploys and local builds accept ?presale=before|live|ended so each
      presale state can be reviewed ahead of the real window. Production ignores it. */
@@ -88,7 +97,7 @@
       })();
       return;
     }
-    if(phase==='ended')return;
+    if(phase==='ended'||presaleDismissed())return;
     var popup=doc.createElement('aside');
     popup.className='presale-popup';
     popup.setAttribute('role','dialog');
@@ -97,14 +106,17 @@
       '<p class="eyebrow">Coffee &amp; Culture Shirt</p><h2 class="presale-title" data-presale-title></h2>'+
       '<div class="presale-clock" data-presale-clock aria-live="off"></div>'+
       '<ul class="presale-details"><li>October 30–November 1, 2026</li><li>Sizes Small–2X</li><li>Ships two weeks after ordering</li></ul>'+
-      '<div class="presale-signup-copy"><strong>Want a reminder?</strong> Sign up for presale updates.</div>'+
+      '<div class="presale-signup-copy"><strong>Want a heads-up?</strong> We&rsquo;ll email you once, the morning it opens.</div>'+
       '<form name="newsletter" method="POST" action="/subscribed.html" data-netlify="true" netlify-honeypot="bot-field" class="presale-signup">'+
         '<input type="hidden" name="form-name" value="newsletter"><p class="hp"><label>Don\'t fill this out <input name="bot-field"></label></p>'+
-        '<label class="sr" for="presale-email">Email address</label><input id="presale-email" type="email" name="email" required autocomplete="email" placeholder="Enter your email address">'+
+        '<label class="sr" for="presale-email">Email address</label><input id="presale-email" type="email" name="email" required autocomplete="email" placeholder="you@email.com">'+
         '<button class="btn btn-sm" type="submit">Keep Me Updated</button></form>'+
-      '<a class="presale-link" href="/merch/#shirt-presale">View shirt details <span aria-hidden="true">&rarr;</span></a>';
+      '<a class="presale-link" href="/merch/#shirt-presale">See the shirt first <span aria-hidden="true">&rarr;</span></a>';
     doc.body.appendChild(popup);
-    window.requestAnimationFrame(function(){popup.classList.add('show')});
+    /* Let the hero land first; an instant modal reads like a template. */
+    window.setTimeout(function(){
+      if(popup.isConnected)popup.classList.add('show');
+    },2000);
 
     var title=popup.querySelector('[data-presale-title]');
     var clock=popup.querySelector('[data-presale-clock]');
@@ -129,6 +141,7 @@
     renderPresale();
     if(phase!=='ended')presaleTimer=window.setInterval(renderPresale,1000);
     function closePresale(){
+      rememberPresaleDismissal();
       window.clearInterval(presaleTimer);
       popup.classList.remove('show');
       window.setTimeout(function(){popup.remove()},250);
@@ -141,6 +154,12 @@
   }
 
   mountPresale();
+
+  /* Event announcements carry data-hide-after (an ISO time with offset) and
+     drop off the page once the event is over. */
+  doc.querySelectorAll('[data-hide-after]').forEach(function(el){
+    if(Date.now()>=Date.parse(el.getAttribute('data-hide-after')))el.remove();
+  });
 
   var year=doc.getElementById('yr');
   if(year)year.textContent=new Date().getFullYear();
@@ -155,6 +174,7 @@
   }
 
   function setMenu(open){
+    if(!header||!toggle)return;
     header.classList.toggle('open',open);
     toggle.setAttribute('aria-expanded',open?'true':'false');
     root.classList.toggle('menu-open',open);
@@ -163,6 +183,12 @@
 
   if(header&&toggle){
     toggle.addEventListener('click',function(){setMenu(!menuOpen())});
+    var nav=doc.getElementById('site-nav');
+    if(nav){
+      nav.addEventListener('click',function(e){
+        if(e.target.closest('a[href]'))setMenu(false);
+      });
+    }
     doc.addEventListener('keydown',function(e){
       if((e.key==='Escape'||e.key==='Esc')&&menuOpen()){
         setMenu(false);
@@ -172,6 +198,13 @@
     var mq=window.matchMedia('(min-width:861px)');
     var reset=function(){if(mq.matches&&menuOpen())setMenu(false)};
     if(mq.addEventListener)mq.addEventListener('change',reset);else if(mq.addListener)mq.addListener(reset);
+
+    /* Mobile browsers may restore this page from their back/forward cache with
+       its previous DOM classes intact. Always return with an unlocked, closed
+       menu, and clear the state before navigating away. */
+    var resetMenu=function(){setMenu(false)};
+    window.addEventListener('pagehide',resetMenu);
+    window.addEventListener('pageshow',resetMenu);
   }
 
   if(sticky&&'IntersectionObserver' in window){
