@@ -35,7 +35,14 @@
     }
   }
 
-  updatePresaleForm(presalePhase(Date.now()));
+  function refreshMerch(){
+    var phase=presalePhase(Date.now());
+    updatePresaleForm(phase);
+    var promo=doc.querySelector('[data-merch-promo]');
+    if(promo&&phase==='ended')promo.textContent='This presale has ended. Join the waitlist to hear about the next shirt release.';
+  }
+  refreshMerch();
+  if(doc.querySelector('[data-presale-form], [data-merch-promo]'))window.setInterval(refreshMerch,60000);
 
   /* Event announcements carry data-hide-after (an ISO time with offset) and
      drop off the page once the event is over. */
