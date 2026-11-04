@@ -130,10 +130,17 @@ a{color:inherit}
 .answer p{margin:0}.answer .eyebrow{color:var(--orange-text);font-weight:700;margin-bottom:.4em}
 .prose{max-width:760px}.prose h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-top:1.6em}
 .prose ul{padding-left:1.2em}.prose li{margin:.4em 0}
-.post-figure{margin:2em 0}.post-figure img{width:100%;height:auto;border-radius:var(--r)}
-.post-figure figcaption{margin-top:.6em;font-size:.95rem;color:var(--muted)}
-.reel{margin:1.6em 0 .6em}.reel iframe{width:100%;max-width:400px;height:min(720px,135vw);border:0;border-radius:var(--r);display:block}
-.reel-link{font-size:.95rem}
+.prose h2{margin-top:2.2em}.prose h2:first-child{margin-top:0}.prose>p{margin:0 0 1.15em}
+.prose .ticks{margin:1.4em 0 1.8em}
+.post-figure,.post-duo{margin:2.6em 0}
+.post-figure img{width:100%;height:auto;max-height:min(70vh,620px);object-fit:cover;object-position:center;border-radius:var(--r);display:block}
+.post-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.post-duo img{width:100%;height:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);display:block}
+.post-figure figcaption,.post-duo figcaption{margin-top:.75em;font-size:.95rem;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.post-duo figcaption{grid-column:1/-1;margin-top:.25em}
+.reel{margin:1.8em 0 .5em;max-width:400px}
+.reel iframe{width:100%;height:min(720px,150vw);border:0;border-radius:var(--r);display:block;background:var(--chalk)}
+.reel-link{font-size:.95rem;margin-bottom:2.6em}
 .prose a,.section>p a,.section-head p a,.faq a{text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px}
 .post-card img{margin-bottom:1em;aspect-ratio:4/3;object-fit:cover;width:100%}
 .post-card h3 a{text-decoration:none}.cards.post-grid{grid-template-columns:repeat(3,1fr)}
