@@ -130,6 +130,10 @@ a{color:inherit}
 .answer p{margin:0}.answer .eyebrow{color:var(--orange-text);font-weight:700;margin-bottom:.4em}
 .prose{max-width:760px}.prose h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-top:1.6em}
 .prose ul{padding-left:1.2em}.prose li{margin:.4em 0}
+.post-figure{margin:2em 0}.post-figure img{width:100%;height:auto;border-radius:var(--r)}
+.post-figure figcaption{margin-top:.6em;font-size:.95rem;color:var(--muted)}
+.reel{margin:1.6em 0 .6em}.reel iframe{width:100%;max-width:400px;height:min(720px,135vw);border:0;border-radius:var(--r);display:block}
+.reel-link{font-size:.95rem}
 .prose a,.section>p a,.section-head p a,.faq a{text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px}
 .post-card img{margin-bottom:1em;aspect-ratio:4/3;object-fit:cover;width:100%}
 .post-card h3 a{text-decoration:none}.cards.post-grid{grid-template-columns:repeat(3,1fr)}
